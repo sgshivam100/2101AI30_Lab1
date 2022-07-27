@@ -106,3 +106,28 @@ void bubbleSort(int arr[], int n)
                 arr[j + 1] = temp;
             }
 }
+
+int partition(int arr[], int l, int r)
+{
+    int i = l - 1;
+    int j = r;
+    int pivot = arr[r];
+    while (1)
+    {
+        while (arr[++i] < pivot);
+        while (arr[--j] > pivot);
+        if (i < j)
+            swap(&arr[i], &arr[j]);
+        else
+            break;
+    }
+    swap(&arr[i], &arr[r]);
+    return i;
+}
+
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
