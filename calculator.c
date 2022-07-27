@@ -16,3 +16,28 @@ void div(float a,float b)
 {
     printf("Division of %f by %f=%f",a,b,a/b);
 }
+
+int main()
+{
+    float a,b;
+    char ch;
+    printf("Choose operation:'+' '-' '*' '/' \n" );
+    scanf("%c",&ch);
+    printf("Enter two numbers:\n");
+    scanf("%f%f",&a,&b);
+    switch(ch){
+        case '+':
+            add(a,b);
+            break;
+        case '-':
+            sub(a,b);
+            break;
+        case '*':
+            multi(a,b);
+            break;
+        case '/':
+            div(a,b);
+            break;
+    }
+    return 0;
+}
